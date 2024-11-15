@@ -1,1 +1,4 @@
-theme = "ananke"
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Herd Website"
+theme = "gallery"
