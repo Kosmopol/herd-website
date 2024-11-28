@@ -1,13 +1,25 @@
 <script setup lang="ts">
 import SectionWrapper from '@/components/herd/section/SectionWrapper.vue';
 import CanvasLayout from '@/components/herd/section/CanvasLayout.vue';
+import CarouselLayout from '@/components/herd/section/CarouselLayout.vue';
 import imgGame from '~/assets/images/Headquarters_Herd.png'
 import imgChara from '~/assets/images/Illustration_sans_titre 1.png'
 </script>
 
 <template>
     <SectionWrapper id="game">
-        <CanvasLayout>
+        <CarouselLayout autoPlay :interval="5000" showControls showDots>
+            <template #slide-0>
+                <img class="carousel-slide-img" :src="imgChara" alt="Image 1" />
+            </template>
+            <template #slide-1>
+                <img class="carousel-slide-img" :src="imgGame" alt="Image 2" />
+            </template>
+            <template #slide-2>
+                <img class="carousel-slide-img" :src="imgChara" alt="Image 3" />
+            </template>
+        </CarouselLayout>
+        <!-- <CanvasLayout>
             <div class="game-canvas-container">
                 <div class="game-canvas-text-container">
                     <h1>Welcome to Fraktar</h1>
@@ -33,12 +45,19 @@ import imgChara from '~/assets/images/Illustration_sans_titre 1.png'
                     <img class="game-bg-canvas-img" width="100%" :src="imgGame" />
                 </div>
             </template>
-        </CanvasLayout>
+        </CanvasLayout> -->
     </SectionWrapper>
 </template>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
+
+
+.carousel-slide-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
 
 .game-canvas-container {
     display: flex;

@@ -4,6 +4,7 @@ import HerdSplashScreen from '~/components/herd/section/splash-screen/HerdSplash
 import HerdGameSection from '~/components/herd/section/game/HerdGameSection.vue';
 import HerdCryptoSection from '~/components/herd/section/crypto/HerdCryptoSection.vue';
 import HerdTeamSection from '~/components/herd/section/team/HerdTeamSection.vue';
+import HerdAdvisoryBoardSection from '~/components/herd/section/advisory-board/HerdAdvisoryBoardSection.vue';
 import HerdNewsletter from '~/components/herd/section/newsletter/HerdNewsletter.vue';
 
 useScrollSpy({ threshold: 0.5 });
@@ -15,6 +16,7 @@ useScrollSpy({ threshold: 0.5 });
     <HerdGameSection class="section-m"></HerdGameSection>
     <HerdCryptoSection class="section-m"></HerdCryptoSection>
     <HerdTeamSection class="section-m"></HerdTeamSection>
+    <HerdAdvisoryBoardSection class="section-m"></HerdAdvisoryBoardSection>
     <HerdNewsletter class="section-m"></HerdNewsletter>
   </MainContainer>
 </template>
