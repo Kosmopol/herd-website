@@ -26,6 +26,11 @@ const closeMenu = () => {
                 <HerdHeaderLink label="Team" link="/#team"></HerdHeaderLink>
                 <HerdHeaderLink label="Follow us" link="/#follow"></HerdHeaderLink>
             </div>
+            <div class="header-vote">
+                <a class="header-vote-link" href="https://cardano.ideascale.com/c/cardano/idea/132602" target="_blank" rel="noopener noreferrer">
+                    Vote for us!
+                </a>
+            </div>
             <div class="header-burger-container">
                 <div @click="openMenu" class="header-burger">
                     <div v-html="HerdBurger"></div>
@@ -44,7 +49,7 @@ const closeMenu = () => {
     margin-top: 80px;
 }
 
-.header-title{
+.header-title {
     margin-left: 2rem;
     margin-right: 3rem;
 }
@@ -75,6 +80,22 @@ const closeMenu = () => {
     margin-right: 4rem;
 }
 
+.header-vote{
+    display: none;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.header-vote-link{
+    border: 1px solid var(--link-color-1);
+    text-decoration: none;
+    color: var(--link-color-1);
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-right:3rem;
+    padding: 1rem;
+}
+
 .header-burger-container {
     display: flex;
     flex: 1;
@@ -100,6 +121,11 @@ const closeMenu = () => {
 }
 
 @media (min-width: $breakpoint-m) {
+
+        
+    .header-vote{
+        display: flex;
+    }
 
     .header-links {
         display: flex;

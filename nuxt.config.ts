@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/fonts/georgia.css','~/assets/scss/normalize.scss', '~/assets/scss/main.scss'],
+
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -24,12 +25,16 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
+
   router: {
     options: {
       scrollBehaviorType: 'smooth'
     }
   },
+
   routeRules: {
     "/": { prerender: true },
   },
+
+  modules: ['@vesp/nuxt-fontawesome'],
 })

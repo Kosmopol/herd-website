@@ -1,0 +1,46 @@
+<script lang="ts" setup>
+import { PictureSizeEnum } from '~/domain/enums/PictureSizeEnum';
+
+const props = defineProps({
+    size: {
+        type: String as PropType<PictureSizeEnum>,
+        default: PictureSizeEnum.medium
+    },
+    imgUrl: String
+})
+
+const sizeClass = computed(() => {
+    return props.size === PictureSizeEnum.large ? 'picture-l' : 'picture-m';
+})
+</script>
+
+<template>
+    <div class="picture-container" :class="sizeClass">
+        <img v-if="imgUrl" class="picture-img" :src="imgUrl">
+    </div>
+</template>
+
+<style lang="scss" scoped>
+.picture-container {
+    background-color: var(--background-color-3);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+}
+
+.picture-m {
+    width: 3rem;
+    height: 3rem;
+}
+
+.picture-l {
+    width: 200px;
+    height: 200px;
+}
+
+.picture-img {
+    width: 100%;
+    height: 100%;
+}
+</style>

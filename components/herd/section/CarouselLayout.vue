@@ -139,7 +139,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background: #ccc; /* Optional background */
   }
   
   .carousel-control {

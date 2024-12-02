@@ -2,7 +2,9 @@
   "name": "herdgame-nuxt",
   "private": true,
   "type": "module",
-  "engines": {"node": "20"},
+  "engines": {
+    "node": "20"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -11,11 +13,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@vesp/nuxt-fontawesome": "^1.1.0",
     "nuxt": "^3.10.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.7.1",
+    "@fortawesome/free-regular-svg-icons": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "sass": "^1.72.0"
   }
 }

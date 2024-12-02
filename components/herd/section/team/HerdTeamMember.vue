@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import HerdPicture from "@/components/herd/atoms/HerdPicture.vue"
 defineProps({
     name: String,
     role: String
@@ -6,33 +7,47 @@ defineProps({
 </script>
 
 <template>
-    <li>
-        <span class="role">{{ role }} : </span><span>{{ name }}</span>
-    </li>
+    <div class="herd-team-member">
+        <HerdPicture></HerdPicture>
+        <div class="herd-team-description">
+            <span class="name">{{ name }}</span>
+            <span>{{ role }}</span>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
 
-.role {
+.herd-team-member{
+    display: flex;
+    gap: 1rem;
+}
+
+.herd-team-description{
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
     text-transform: uppercase;
     font-weight: 800;
 }
 
 @media (min-width: $breakpoint-s) {
-    .role {
+    .name {
         letter-spacing: 1px;
     }
 }
 
 @media (min-width: $breakpoint-m) {
-    .role {
+    .name {
         letter-spacing: 2px;
     }
 }
 
 @media (min-width: $breakpoint-l) {
-    .role {
+    .name {
         letter-spacing: 4px;
     }
 }

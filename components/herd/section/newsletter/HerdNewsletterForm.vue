@@ -51,7 +51,7 @@ form {
 input {
     padding: 8px;
     border: 1px solid;
-    border-color: var(--background-color-2);
+    border-color: var(--background-color-3);
     border-radius: 4px;
 }
 

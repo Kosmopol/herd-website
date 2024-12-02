@@ -12,12 +12,12 @@ useScrollSpy({ threshold: 0.5 });
 
 <template>
   <MainContainer>
-    <HerdSplashScreen></HerdSplashScreen>
+    <!-- <HerdSplashScreen></HerdSplashScreen> -->
     <HerdGameSection class="section-m"></HerdGameSection>
-    <HerdCryptoSection class="section-m"></HerdCryptoSection>
-    <HerdTeamSection class="section-m"></HerdTeamSection>
-    <HerdAdvisoryBoardSection class="section-m"></HerdAdvisoryBoardSection>
-    <HerdNewsletter class="section-m"></HerdNewsletter>
+    <HerdCryptoSection class="section-m section-margin"></HerdCryptoSection>
+    <HerdTeamSection class="section-m section-margin"></HerdTeamSection>
+    <HerdAdvisoryBoardSection class="section-m section-margin"></HerdAdvisoryBoardSection>
+    <HerdNewsletter class="section-m section-margin"></HerdNewsletter>
   </MainContainer>
 </template>
 
@@ -26,8 +26,11 @@ useScrollSpy({ threshold: 0.5 });
 
 .section-m {
   max-width: var(--max-width);
-  padding-top: 80px;
+}
+
+.section-margin {
   margin: 0 1rem;
+  padding-top: 80px;
 }
 
 .min-height-section {
@@ -35,13 +38,13 @@ useScrollSpy({ threshold: 0.5 });
 }
 
 @media (min-width: $breakpoint-m) {
-  .section-m {
+  .section-margin {
     margin: 0 1rem;
   }
 }
 
 @media (min-width: $breakpoint-l) {
-  .section-m {
+  .section-margin {
     margin: 0 3rem;
   }
 }
