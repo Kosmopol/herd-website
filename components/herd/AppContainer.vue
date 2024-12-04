@@ -14,5 +14,6 @@
     margin: auto;
     box-sizing: border-box;
     scroll-margin-top: 80px;
+    background: var(--background-color-2);
 }
 </style>

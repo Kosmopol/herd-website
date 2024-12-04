@@ -1,32 +1,21 @@
 <script setup lang="ts">
 import SectionWrapper from '~/components/herd/section/SectionWrapper.vue';
 import HerdTeamMember from '~/components/herd/section/team/HerdTeamMember.vue'
-import CanvasLayout from '@/components/herd/section/CanvasLayout.vue';
-
-const teamMembers = [
-    { role: "Game Director", name: "Pierre Aceituno" },
-    { role: "Communication and Partnerships", name: "Karim Sellami" },
-    { role: "Art Direction", name: "Elsa Nedelec" },
-    { role: "Technical Art", name: "Riwal Pacquentin" },
-    { role: "Animator", name: "Laura Martin-Wortham" },
-    { role: "2D Artist", name: "Lola Torres" },
-    { role: "Sound Designer/Composer", name: "Henri Clerc" },
-    { role: "Sound Designer Technical", name: "Martin Rabiller" },
-    { role: "Game Design", name: "Dorian Souc" },
-    { role: "Programming", name: "Pierre Hennecart" }
-];
+import { teamMembers } from '@/domain/data/team';
 </script>
 
 <template>
-    <SectionWrapper id="team">
-        <CanvasLayout :is-gold="true">
-            <h2 class="h2-team">Our Team</h2>
+    <SectionWrapper class="team-section" id="team">
+        <!-- <CanvasLayout :is-gold="true"> -->
+        <h2 class="h2-team">Our Team</h2>
+        <div class="team-container">
             <div class="team-content">
-                <HerdTeamMember v-for="member in teamMembers" :key="member.name" :role="member.role"
-                    :name="member.name">
+                <HerdTeamMember v-for="member in teamMembers" :key="member.name" :role="member.role" :name="member.name"
+                    :photo="member.photo" :linkedin="member.linkedin" :website="member.website">
                 </HerdTeamMember>
             </div>
-        </CanvasLayout>
+        </div>
+        <!-- </CanvasLayout> -->
     </SectionWrapper>
 </template>
 
@@ -34,9 +23,18 @@ const teamMembers = [
 @import "@/assets/scss/variables.scss";
 
 
+.team-section {
+    width: 100%;
+}
+
+
 .h2-team {
     color: var(--title-color-1);
     font-size: 1.6rem;
+}
+
+.team-container {
+    display: flex;
 }
 
 .team-content {
@@ -68,9 +66,13 @@ const teamMembers = [
         font-size: 1.8rem;
     }
 
+    .team-container {
+        justify-content: space-evenly;
+    }
+
     .team-content {
         grid-template-columns: repeat(2, 1fr);
-        padding: inherit;
+        padding: 1rem;
         font-size: 1.4rem;
     }
 }

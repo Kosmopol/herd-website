@@ -41,7 +41,6 @@ const advisoryMembers = [
 
 }
 
-
 @media (min-width: $breakpoint-l) {
     .h2-advisory-board {
         font-size: 1.8rem;

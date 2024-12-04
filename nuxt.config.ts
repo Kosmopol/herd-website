@@ -35,6 +35,5 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { prerender: true },
   },
-
   modules: ['@vesp/nuxt-fontawesome'],
 })

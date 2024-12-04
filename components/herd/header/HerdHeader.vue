@@ -2,6 +2,7 @@
 import HerdHeaderTitle from '@/components/herd/header/HerdHeaderTitle.vue';
 import HerdHeaderLink from '@/components/herd/header/HerdHeaderLink.vue';
 import HerdMenu from '@/components/herd/menu/HerdMenu.vue';
+import HerdVote from '@/components/herd/atoms/HerdVote.vue';
 import HerdBurger from '@/assets/svg/menu_burger.svg?raw'
 
 const isMenuOpen = ref(false)
@@ -27,9 +28,8 @@ const closeMenu = () => {
                 <HerdHeaderLink label="Follow us" link="/#follow"></HerdHeaderLink>
             </div>
             <div class="header-vote">
-                <a class="header-vote-link" href="https://cardano.ideascale.com/c/cardano/idea/132602" target="_blank" rel="noopener noreferrer">
-                    Vote for us!
-                </a>
+                <HerdVote>
+                </HerdVote>
             </div>
             <div class="header-burger-container">
                 <div @click="openMenu" class="header-burger">
@@ -80,20 +80,11 @@ const closeMenu = () => {
     margin-right: 4rem;
 }
 
-.header-vote{
-    display: none;
-    flex: 1;
-    justify-content: flex-end;
-}
-
-.header-vote-link{
-    border: 1px solid var(--link-color-1);
-    text-decoration: none;
-    color: var(--link-color-1);
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    margin-right:3rem;
-    padding: 1rem;
+.header-vote {
+    position: fixed;
+    display: block;
+    bottom: 48px;
+    right: 16px;
 }
 
 .header-burger-container {
@@ -122,17 +113,28 @@ const closeMenu = () => {
 
 @media (min-width: $breakpoint-m) {
 
-        
-    .header-vote{
-        display: flex;
-    }
-
     .header-links {
         display: flex;
     }
 
     .header-burger-container {
         display: none;
+    }
+}
+
+
+
+@media (min-width: $breakpoint-l) {
+
+
+    .header-vote {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+        margin-right: 3rem;
+        bottom: 0;
+        right: 0;
     }
 }
 </style>
